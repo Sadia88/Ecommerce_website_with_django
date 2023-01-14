@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.http import HttpResponse
 
 # Create your views here.
 def index(request):
@@ -6,22 +7,22 @@ def index(request):
 
 
 
-def about():
+def about(request):
     pass
 
-def contact():
+def contact(request):
+    return HttpResponse("contact")
+
+
+def tracker(request):
+    pass
+
+def search(request):
+    pass
+
+def productview(request):
     pass
 
 
-def tracker():
-    pass
-
-def search():
-    pass
-
-def productview():
-    pass
-
-
-def checkout():
+def checkout(request):
     pass

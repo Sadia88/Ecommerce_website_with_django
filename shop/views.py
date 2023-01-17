@@ -32,18 +32,25 @@ def about(request):
    return render(request,'shop/about.html')
 
 def contact(request):
-    return HttpResponse("contact")
+    if(request.method=='POST'):
+        name=request.POST.get('name','')
+        email=request.POST.get('name','')
+        phone=request.POST.get('name','')
+        desc=request.POST.get('name','')
+    return render(request,'shop/contact.html')
 
 
 def tracker(request):
-    pass
+     return render(request,'shop/tracker.html')
 
 def search(request):
-    pass
+   return render(request,'shop/search.html')
 
-def productview(request):
-    pass
+def productview(request,myid):
+     product=Product.objects.filter(id=myid)
+     print(product)
+     return render(request,'shop/productview.html',{'product':product[0]})
 
 
 def checkout(request):
-    pass
+     return render(request,'shop/checkout.html')

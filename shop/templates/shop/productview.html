@@ -1,0 +1,24 @@
+{% extends 'shop/basic.html' %}
+{% block title %} {{product.product_name}} -- Ecommerce Cart{% endblock %}
+{% block body %}
+<div class="container my-4 border border-4 border-secondary p-4 rounded shadow-lg ">
+    <div class="row">
+    <div class="col-md-4">
+    <div class="row">
+       <img src="/media//{{product.image}}" width="233px" height="385px">
+    
+    </div>
+    <div class='row my-3'>
+
+        <button class='btn btn-primary mx-2'>Buy Now </button>
+        <button class='btn btn-primary'>Add to Cart </button>
+    </div>
+        </div>
+    <div class="col-md-8">
+        <h5>{{product.product_name}}</h5>
+        <p>{{product.description}}</p>
+        <p><span class=''><b>Price:</b> <span>{{product.price}}</p>
+    </div>
+        </div>
+</div>
+{% endblock %}

@@ -72,6 +72,7 @@
               <h5 class="card-title" id='namepr{{i.id}}'>{{i.product_name}}</h5>
               <p class="card-text">{{i.description |slice:'0:25'}}...</p>
 
+              <h5 class="card-title" ><b> Price : </b> <span id='pricepr{{i.id}}'> {{i.price}}</span></h5>
               <span id="divpr{{i.id}}" class="divpr">
                 <button id="pr{{i.id}}" class="btn btn-primary cart">Add To Cart</button>
             </span>
@@ -119,7 +120,10 @@
         } else {
             qty = 1;
             name = document.getElementById('name'+idstr).innerHTML
-            cart[idstr] = [qty, name];
+            price = document.getElementById('price'+idstr).innerHTML
+            cart[idstr] = [qty, name,parseInt(price)];
+
+            console.log(cart)
     
         }
         updateCart(cart);
@@ -139,7 +143,7 @@
             i = i + 1;
         }
         popStr = popStr + "</div> <a href='/shop/checkout'><button class='btn btn-primary' id ='checkout'>Checkout</button></a> <button class='btn btn-primary' onclick='clearCart()' id ='clearCart'>Clear Cart</button>     "
-        console.log(popStr);
+        {% comment %} console.log(popStr); {% endcomment %}
         document.getElementById('popcart').setAttribute('data-content', popStr);
         $('#popcart').popover('show');
     }

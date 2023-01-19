@@ -1,14 +1,17 @@
 from django.db import models
 
 # Create your models here.
-class Product(models.Model):
+class Blogpost(models.Model):
     post_id=models.AutoField(primary_key=True)
     title=models.CharField(max_length=200)
     head0=models.CharField(max_length=500)
-    head1=models.CharField(max_length=500)
-    head2=models.IntegerField(max_length=500)
+    chead0=models.CharField(max_length=5000,default='')
+    head1=models.CharField(max_length=500,)
+    chead1=models.CharField(max_length=5000,default='')
+    head2=models.CharField(max_length=500)
+    chead2=models.CharField(max_length=5000,default='')
     thumbnail=models.ImageField(upload_to='blog/images',default='')
-   
     pub_date=models.DateField()
+
     def __str__(self):
         return self.title

@@ -1,4 +1,5 @@
-echo "BUILD START"
-python4.1.5 -m pip install -r requirments.txt
-python4.1.5 manage.py collecctstatic --noinput --clear
-echo "BUILD END"
+# echo "BUILD START"
+# python3.9 -m pip install -r requirments.txt
+# python3.9 manage.py collecctstatic --noinput --clear
+# echo "BUILD END"
+python manage.py collectstatic --noinput
